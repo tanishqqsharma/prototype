@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Neel's Dental Clinic – Jagriti Vihar, Meerut</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: {
+              50:  '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+            },
+            ochre: {
+              400: '#f59e0b',
+              500: '#d97706',
+            },
+            mint: '#e6faf8',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════
+     ANNOUNCEMENT BAR
+═════════════════════════════════════════════════════════ -->
+<div id="announcement-bar" class="py-2 px-4">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+    <span class="flex items-center gap-1.5">
+      <span>📍</span>
+      <span>S-3/29, Near Community Center Sector 3, Jagriti Vihar, Meerut – 250004</span>
+    </span>
+    <span class="flex items-center gap-3">
+      <span class="flex items-center gap-1.5">
+        <span>⏰</span>
+        <span id="timing-text">Today: Loading timings…</span>
+      </span>
+      <a href="tel:+919319952798" class="font-semibold text-white underline underline-offset-2 hover:text-teal-200 transition-colors">
+        📞 +91 93199 52798
+      </a>
+    </span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     NAVBAR
+═════════════════════════════════════════════════════════ -->
+<nav id="navbar" class="py-3 px-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+    <!-- Brand -->
+    <a href="#hero" class="flex items-center gap-2 no-underline">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:#0d9488;">🦷</div>
+      <div>
+        <div class="font-bold text-slate-800 text-sm leading-tight">Dr. Neel's</div>
+        <div class="text-teal-600 text-xs font-medium leading-tight">Dental Clinic</div>
+      </div>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex items-center gap-7">
+      <a href="#services"     class="nav-link">Services</a>
+      <a href="#about"        class="nav-link">About</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+      <a href="#contact"      class="nav-link">Contact</a>
+    </div>
+
+    <!-- Desktop CTA -->
+    <a href="https://wa.me/919319952798?text=Hello%20Dr.%20Neel%2C%20I%20would%20like%20to%20book%20an%20appointment."
+       target="_blank" rel="noopener"
+       class="hidden md:inline-flex btn-wa text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Book on WhatsApp
+    </a>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors" aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden px-4 pb-4 mt-3 space-y-1">
+    <a href="#services"     class="block py-2.5 px-4 rounded-lg text-slate-700 hover:bg-teal-50 hover:text-teal-700 font-medium transition-colors mobile-nav-link">Services</a>
+    <a href="#about"        class="block py-2.5 px-4 rounded-lg text-slate-700 hover:bg-teal-50 hover:text-teal-700 font-medium transition-colors mobile-nav-link">About</a>
+    <a href="#testimonials" class="block py-2.5 px-4 rounded-lg text-slate-700 hover:bg-teal-50 hover:text-teal-700 font-medium transition-colors mobile-nav-link">Reviews</a>
+    <a href="#contact"      class="block py-2.5 px-4 rounded-lg text-slate-700 hover:bg-teal-50 hover:text-teal-700 font-medium transition-colors mobile-nav-link">Contact</a>
+    <div class="pt-2">
+      <a href="https://wa.me/919319952798?text=Hello%20Dr.%20Neel%2C%20I%20would%20like%20to%20book%20an%20appointment."
+         target="_blank" rel="noopener"
+         class="btn-wa w-full justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Book on WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════
+     HERO
+═════════════════════════════════════════════════════════ -->
+<section id="hero" class="py-14 px-4" style="background: linear-gradient(180deg, #f0fdfa 0%, #fff 100%);">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+    <!-- Left Copy -->
+    <div class="fade-up">
+      <span class="section-eyebrow">Meerut's Trusted Dental Care Since 2012</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight mb-5">
+        Your Family's
+        <span style="color:#0d9488;">Trusted Smile</span>
+        Partner in Jagriti Vihar for 12+ Years.
+      </h1>
+      <p class="text-slate-600 text-lg leading-relaxed mb-8 max-w-lg">
+        Budget-friendly, gentle dental care for kids, families, and seniors — in the heart of Meerut. Hindi &amp; English speaking. Same-day appointments available.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://wa.me/919319952798?text=Hello%20Dr.%20Neel%2C%20I%20would%20like%20to%20book%20an%20appointment."
+           target="_blank" rel="noopener" class="btn-wa">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Book Appointment via WhatsApp
+        </a>
+        <a href="https://maps.google.com/?q=Dr.+Neel+Dental+Clinic+Jagriti+Vihar+Meerut"
+           target="_blank" rel="noopener" class="btn-outline">
+          📍 Get Directions
+        </a>
+      </div>
+
+      <!-- Trust Signals Row -->
+      <div class="flex flex-wrap gap-4 mt-9 pt-7 border-t border-slate-100">
+        <div class="flex items-center gap-2 text-sm text-slate-600">
+          <span class="w-8 h-8 rounded-full flex items-center justify-center text-base" style="background:#e6faf8;">✅</span>
+          <span>Sterilised Equipment</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-slate-600">
+          <span class="w-8 h-8 rounded-full flex items-center justify-center text-base" style="background:#e6faf8;">🗣️</span>
+          <span>Hindi &amp; English</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-slate-600">
+          <span class="w-8 h-8 rounded-full flex items-center justify-center text-base" style="background:#e6faf8;">💳</span>
+          <span>UPI / Cash / Card</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Illustration -->
+    <div class="fade-up hero-illustration" style="transition-delay:0.15s;">
+      <div class="hero-grid-lines"></div>
+      <span class="tooth-icon">🦷</span>
+      <div class="hero-clinic-visual">
+        <div class="text-white text-center">
+          <div class="text-5xl font-extrabold leading-none mb-1">12+</div>
+          <div class="text-teal-200 text-sm font-medium uppercase tracking-widest">Years of Experience</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-2 mt-2">
+          <span class="stat-pill">🦷 Root Canal Expert</span>
+          <span class="stat-pill">✨ Tooth Whitening</span>
+          <span class="stat-pill">🔬 Laser Dentistry</span>
+          <span class="stat-pill">🦿 Implants</span>
+        </div>
+        <div class="text-center mt-3">
+          <div class="text-white font-bold text-xl">Dr. Neelratan Chauhan</div>
+          <div class="text-teal-300 text-sm">BDS • Jagriti Vihar, Meerut</div>
+        </div>
+      </div>
+      <!-- Rating Badge -->
+      <div class="rating-badge">
+        <span class="text-xl">⭐</span>
+        <div>
+          <div class="font-bold text-slate-800 text-sm leading-tight">4.7 / 5</div>
+          <div class="text-slate-500 text-xs">Google Rated</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     WHY CHOOSE US
+═════════════════════════════════════════════════════════ -->
+<section id="why" class="py-16 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <span class="section-eyebrow">Why Patients Choose Us</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">The Dr. Neel Difference</h2>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="choose-card fade-up" style="transition-delay:0.0s;">
+        <div class="choose-icon" style="background:#e6faf8;">🏆</div>
+        <h3 class="text-lg font-bold text-slate-800 mb-2">12+ Year Legacy</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Over a decade of serving families in Jagriti Vihar and across Meerut. Thousands of smiles restored, built on trust earned one patient at a time.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="choose-card fade-up" style="transition-delay:0.1s;">
+        <div class="choose-icon" style="background:#fef3c7;">👨‍👩‍👧‍👦</div>
+        <h3 class="text-lg font-bold text-slate-800 mb-2">Family &amp; Budget Friendly</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Transparent pricing with no hidden charges. Gentle care tailored for kids, adults, and senior citizens — all under one roof, accessible to every budget.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="choose-card fade-up" style="transition-delay:0.2s;">
+        <div class="choose-icon" style="background:#f0fdf4;">🧼</div>
+        <h3 class="text-lg font-bold text-slate-800 mb-2">Strict Sterilization</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Clinic-grade sterilised instruments on every visit. Cross-contamination is zero-tolerance here — your safety is a non-negotiable standard, not a selling point.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     SERVICES
+═════════════════════════════════════════════════════════ -->
+<section id="services" class="py-16 px-4" style="background:#f8fffe;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <span class="section-eyebrow">What We Offer</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Our Dental Services</h2>
+      <p class="text-slate-500 mt-3 max-w-xl mx-auto text-base">Click any service to learn more about what's included and what to expect.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="service-grid">
+
+      <!-- Root Canal -->
+      <div class="service-card fade-up" data-service="rct" style="transition-delay:0.0s;">
+        <span class="service-emoji">🦷</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Root Canal Treatment (RCT)</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Painless, single-sitting RCT using modern rotary instruments. Save your natural tooth — no extraction required.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">Pain-Free Procedure</div>
+      </div>
+
+      <!-- Whitening -->
+      <div class="service-card fade-up" data-service="whitening" style="transition-delay:0.05s;">
+        <span class="service-emoji">✨</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Tooth Whitening</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Professional-grade bleaching that delivers visibly brighter smiles in one session. Safe, fast, and lasting results.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">Visible in 1 Session</div>
+      </div>
+
+      <!-- Laser -->
+      <div class="service-card fade-up" data-service="laser" style="transition-delay:0.1s;">
+        <span class="service-emoji">🔬</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Laser Dentistry</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Advanced laser technology for gum treatments, cavity detection, and soft-tissue procedures — minimal bleeding, faster healing.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">Minimal Discomfort</div>
+      </div>
+
+      <!-- Prosthodontics -->
+      <div class="service-card fade-up" data-service="prostho" style="transition-delay:0.15s;">
+        <span class="service-emoji">👑</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Fixed Prosthodontics</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Crowns, bridges, and fixed partial dentures crafted for strength and natural aesthetics. Restore full chewing function permanently.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">Permanent Solution</div>
+      </div>
+
+      <!-- Implants -->
+      <div class="service-card fade-up" data-service="implants" style="transition-delay:0.2s;">
+        <span class="service-emoji">🦿</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Artificial Teeth Implant</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Painless implants for senior citizens and adults — fuse with your jawbone naturally for a lifetime of confident chewing and smiling.</p>
+        <div class="mt-3 inline-block text-xs font-semibold rounded-full px-3 py-1" style="color:#d97706; background:#fef3c7;">Ideal for Seniors</div>
+      </div>
+
+      <!-- Braces -->
+      <div class="service-card fade-up" data-service="braces" style="transition-delay:0.25s;">
+        <span class="service-emoji">😁</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Dental Braces Fixing</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Metal, ceramic, and aligner options for teens and adults. Correct overcrowding, gaps, and bite issues with proven orthodontic care.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">All Ages Welcome</div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 fade-up">
+      <a href="https://wa.me/919319952798?text=Hello%20Dr.%20Neel%2C%20I%20would%20like%20to%20enquire%20about%20a%20dental%20service."
+         target="_blank" rel="noopener" class="btn-primary">
+        💬 Ask About Any Service on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     ABOUT THE DOCTOR
+═════════════════════════════════════════════════════════ -->
+<section id="about" class="py-16 px-4 bg-white">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Visual Side -->
+    <div class="fade-up doctor-photo-placeholder order-1 md:order-none">
+      <div class="text-center text-white z-10 relative px-6 py-10">
+        <div class="text-7xl mb-5">👨‍⚕️</div>
+        <div class="text-2xl font-extrabold mb-1">Dr. Neelratan Chauhan</div>
+        <div class="text-teal-100 font-medium text-sm mb-6">BDS • 12 Years in Healthcare</div>
+        <div class="flex flex-wrap justify-center gap-2">
+          <span class="stat-pill">🎓 BDS Graduate</span>
+          <span class="stat-pill">🗣️ Hindi &amp; English</span>
+          <span class="stat-pill">🧑‍🤝‍🧑 12+ Yr Experience</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Side -->
+    <div class="fade-up" style="transition-delay:0.15s;">
+      <span class="section-eyebrow">Meet the Doctor</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1 mb-5">
+        The Person Behind<br />Your Healthy Smile
+      </h2>
+      <p class="text-slate-600 leading-relaxed mb-4">
+        Dr. Neelratan Chauhan, BDS, has spent over 12 years building a practice grounded in empathy, precision, and clinical trust. He trained with a deep commitment to pain-free dentistry, which is why patients — young children to senior citizens — return year after year.
+      </p>
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Fluent in both Hindi and English, Dr. Neel ensures every patient fully understands their diagnosis, treatment plan, and costs before any procedure begins. His philosophy: an informed patient is a confident patient.
+      </p>
+      <div class="flex flex-wrap mb-7">
+        <span class="credential-chip">🎓 BDS Qualified</span>
+        <span class="credential-chip">🗓️ 12+ Years Practice</span>
+        <span class="credential-chip">🔬 Laser Certified</span>
+        <span class="credential-chip">🗣️ Hindi &amp; English</span>
+        <span class="credential-chip">👶 Pediatric Friendly</span>
+        <span class="credential-chip">🧓 Senior Specialist</span>
+      </div>
+      <a href="https://wa.me/919319952798?text=Hello%20Dr.%20Neel%2C%20I%20would%20like%20to%20consult%20with%20you."
+         target="_blank" rel="noopener" class="btn-primary">
+        💬 Consult Dr. Neel on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TESTIMONIALS
+═════════════════════════════════════════════════════════ -->
+<section id="testimonials" class="py-16 px-4" style="background:#f8fffe;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <span class="section-eyebrow">Patient Reviews</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Real Words, Real Smiles</h2>
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <span class="star-row text-lg">★★★★★</span>
+        <span class="text-slate-500 text-sm font-medium">4.7 / 5 on Google</span>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-6">
+
+      <!-- Review 1 -->
+      <div class="testimonial-card fade-up" style="transition-delay:0.0s;">
+        <div class="pt-6">
+          <p class="text-slate-700 leading-relaxed text-sm mb-5">"Broken front tooth was repaired in a single sitting without any pain. Perfect smile. Thanks Dr. Neel."</p>
+          <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0" style="background:#0d9488;">RB</div>
+            <div>
+              <div class="font-semibold text-slate-800 text-sm">Rohit Bisht</div>
+              <div class="star-row text-xs">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="testimonial-card fade-up" style="transition-delay:0.1s;">
+        <div class="pt-6">
+          <p class="text-slate-700 leading-relaxed text-sm mb-5">"My wife got an implant 2 years back; it was painless surgery and is still working well. I also got 2 implants for back teeth. Good approach, nice work. Highly recommend."</p>
+          <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0" style="background:#0f766e;">RK</div>
+            <div>
+              <div class="font-semibold text-slate-800 text-sm">Rakesh Kumar Agarwal</div>
+              <div class="star-row text-xs">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="testimonial-card fade-up" style="transition-delay:0.2s;">
+        <div class="pt-6">
+          <p class="text-slate-700 leading-relaxed text-sm mb-5">"Clean &amp; hygienic. Gentle care. Excellent treatment. Accurate diagnosis. Sterilised equipment."</p>
+          <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0" style="background:#115e59;">JD</div>
+            <div>
+              <div class="font-semibold text-slate-800 text-sm">Jassika / Dolly</div>
+              <div class="star-row text-xs">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 fade-up">
+      <a href="https://www.google.com/maps/search/Dr.+Neel+Dental+Clinic+Jagriti+Vihar+Meerut"
+         target="_blank" rel="noopener" class="btn-outline text-sm">
+        🌐 View All Google Reviews
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     CONTACT STRIP
+═════════════════════════════════════════════════════════ -->
+<section id="contact" class="py-14 px-4" style="background:linear-gradient(135deg,#0d9488 0%,#0f766e 100%);">
+  <div class="max-w-5xl mx-auto text-center fade-up">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Ready for a Healthier Smile?</h2>
+    <p class="text-teal-100 text-lg mb-8 max-w-xl mx-auto">Book your appointment today — same-day slots often available. Just message us on WhatsApp or call directly.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="https://wa.me/919319952798?text=Hello%20Dr.%20Neel%2C%20I%20would%20like%20to%20book%20an%20appointment."
+         target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 bg-white text-teal-700 font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-teal-50 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-500">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Book via WhatsApp
+      </a>
+      <a href="tel:+919319952798"
+         class="inline-flex items-center gap-2 bg-white text-teal-700 font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-teal-50 transition-colors">
+        📞 Call +91 93199 52798
+      </a>
+      <a href="mailto:drneelratan@gmail.com"
+         class="inline-flex items-center gap-2 bg-white text-teal-700 font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-teal-50 transition-colors">
+        ✉️ drneelratan@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     FOOTER
+═════════════════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="max-w-7xl mx-auto px-4 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- Brand Column -->
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:#0d9488;">🦷</div>
+        <div>
+          <div class="font-bold text-white text-sm">Dr. Neel's Dental Clinic</div>
+          <div class="text-teal-400 text-xs">Jagriti Vihar, Meerut</div>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed mb-5">Trusted dental care for families across Meerut since 2012. Gentle, affordable, and sterile — always.</p>
+      <div class="space-y-2 text-sm">
+        <div>📍 <a href="https://maps.google.com/?q=Dr.+Neel+Dental+Clinic+Jagriti+Vihar+Meerut" target="_blank" rel="noopener">S-3/29, Near Community Center Sector 3, Jagriti Vihar, Meerut – 250004</a></div>
+        <div>📞 <a href="tel:+919319952798">+91 93199 52798</a></div>
+        <div>✉️ <a href="mailto:drneelratan@gmail.com">drneelratan@gmail.com</a></div>
+      </div>
+    </div>
+
+    <!-- Clinic Hours -->
+    <div>
+      <div class="footer-heading">Clinic Hours</div>
+      <div id="footer-hours">
+        <div class="hours-row" id="hour-mon"><span>Monday</span><span>10am – 9pm</span></div>
+        <div class="hours-row" id="hour-tue"><span>Tuesday</span><span>10am – 9pm</span></div>
+        <div class="hours-row" id="hour-wed"><span>Wednesday</span><span>5pm – 9pm</span></div>
+        <div class="hours-row" id="hour-thu"><span>Thursday</span><span>10am – 9pm</span></div>
+        <div class="hours-row" id="hour-fri"><span>Friday</span><span>10am – 9pm</span></div>
+        <div class="hours-row" id="hour-sat"><span>Saturday</span><span>10am – 9pm</span></div>
+        <div class="hours-row" id="hour-sun"><span>Sunday</span><span>10am – 1pm</span></div>
+      </div>
+    </div>
+
+    <!-- Payment & Services -->
+    <div>
+      <div class="footer-heading">Payment Options</div>
+      <div class="flex flex-wrap gap-2 mb-8">
+        <span class="pay-badge">📲 UPI</span>
+        <span class="pay-badge">💵 Cash</span>
+        <span class="pay-badge">💳 Card</span>
+      </div>
+      <div class="footer-heading">Quick Services</div>
+      <ul class="space-y-1 text-sm">
+        <li>🦷 Root Canal Treatment</li>
+        <li>✨ Tooth Whitening</li>
+        <li>🔬 Laser Dentistry</li>
+        <li>👑 Fixed Prosthodontics</li>
+        <li>🦿 Artificial Teeth Implant</li>
+        <li>😁 Dental Braces</li>
+      </ul>
+    </div>
+
+    <!-- Map Placeholder -->
+    <div>
+      <div class="footer-heading">Find Us</div>
+      <div class="map-placeholder">
+        <span class="text-3xl">🗺️</span>
+        <div class="text-center px-4">
+          <div class="font-semibold mb-1">S-3/29, Sector 3</div>
+          <div class="text-xs text-teal-300 mb-3">Jagriti Vihar, Meerut – 250004</div>
+          <a href="https://maps.google.com/?q=Dr.+Neel+Dental+Clinic+Jagriti+Vihar+Meerut"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1 text-xs font-semibold bg-teal-700 text-white px-3 py-1.5 rounded-full hover:bg-teal-600 transition-colors">
+            📍 Open in Google Maps
+          </a>
+        </div>
+      </div>
+      <div class="mt-4">
+        <a href="https://wa.me/919319952798?text=Hello%20Dr.%20Neel%2C%20I%20would%20like%20to%20book%20an%20appointment."
+           target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-2 text-sm font-semibold text-white py-2.5 rounded-xl transition-colors"
+           style="background:#25d366;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Book on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white border-opacity-5 py-5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+      <span>© 2025 Dr. Neel's Dental Clinic, Jagriti Vihar, Meerut. All rights reserved.</span>
+      <span>Designed with ❤️ for Meerut families.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- External JavaScript -->
+<script src="main.js"></script>
+</body>
+</html>
