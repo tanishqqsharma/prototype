@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrightSmile Dental Care | Modern Family Dentistry</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: {
+              50:  '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+            },
+            ochre: {
+              400: '#f59e0b',
+              500: '#d97706',
+            },
+            mint: '#e6faf8',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════
+     ANNOUNCEMENT BAR
+═════════════════════════════════════════════════════════ -->
+<div id="announcement-bar" class="py-2 px-4">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+    <span class="flex items-center gap-1.5">
+      <span>📍</span>
+      <span>Add your clinic address here</span>
+    </span>
+    <span class="flex items-center gap-3">
+      <span class="flex items-center gap-1.5">
+        <span>⏰</span>
+        <span id="timing-text">Appointments available by request</span>
+      </span>
+      <a href="#contact" class="font-semibold text-white underline underline-offset-2 hover:text-teal-200 transition-colors">
+        📞 Add phone number
+      </a>
+    </span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     NAVBAR
+═════════════════════════════════════════════════════════ -->
+<nav id="navbar" class="py-3 px-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+    <!-- Brand -->
+    <a href="#hero" class="flex items-center gap-2 no-underline">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:#0d9488;">🦷</div>
+      <div>
+        <div class="font-bold text-slate-800 text-sm leading-tight">BrightSmile</div>
+        <div class="text-teal-600 text-xs font-medium leading-tight">Dental Clinic</div>
+      </div>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex items-center gap-7">
+      <a href="#services"     class="nav-link">Services</a>
+      <a href="#about"        class="nav-link">About</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+      <a href="#contact"      class="nav-link">Contact</a>
+    </div>
+
+    <!-- Desktop CTA -->
+    <a href="#contact"
+       class="hidden md:inline-flex btn-wa text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Request Appointment
+    </a>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors" aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden px-4 pb-4 mt-3 space-y-1">
+    <a href="#services"     class="block py-2.5 px-4 rounded-lg text-slate-700 hover:bg-teal-50 hover:text-teal-700 font-medium transition-colors mobile-nav-link">Services</a>
+    <a href="#about"        class="block py-2.5 px-4 rounded-lg text-slate-700 hover:bg-teal-50 hover:text-teal-700 font-medium transition-colors mobile-nav-link">About</a>
+    <a href="#testimonials" class="block py-2.5 px-4 rounded-lg text-slate-700 hover:bg-teal-50 hover:text-teal-700 font-medium transition-colors mobile-nav-link">Reviews</a>
+    <a href="#contact"      class="block py-2.5 px-4 rounded-lg text-slate-700 hover:bg-teal-50 hover:text-teal-700 font-medium transition-colors mobile-nav-link">Contact</a>
+    <div class="pt-2">
+      <a href="#contact"
+         class="btn-wa w-full justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Request Appointment
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════
+     HERO
+═════════════════════════════════════════════════════════ -->
+<section id="hero" class="py-14 px-4" style="background: linear-gradient(180deg, #f0fdfa 0%, #fff 100%);">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+    <!-- Left Copy -->
+    <div class="fade-up">
+      <span class="section-eyebrow">Modern, Compassionate Dental Care</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight mb-5">
+        Confident Care for
+        <span style="color:#0d9488;">Every Smile.</span>
+      </h1>
+      <p class="text-slate-600 text-lg leading-relaxed mb-8 max-w-lg">
+        Gentle, modern dental care designed for children, adults, and seniors. Use this template to showcase your clinic, services, and appointment process.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#contact"
+           target="_blank" rel="noopener" class="btn-wa">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Request an Appointment
+        </a>
+        <a href="#contact"
+           target="_blank" rel="noopener" class="btn-outline">
+          📍 Learn More
+        </a>
+      </div>
+
+      <!-- Trust Signals Row -->
+      <div class="flex flex-wrap gap-4 mt-9 pt-7 border-t border-slate-100">
+        <div class="flex items-center gap-2 text-sm text-slate-600">
+          <span class="w-8 h-8 rounded-full flex items-center justify-center text-base" style="background:#e6faf8;">✅</span>
+          <span>Sterilised Equipment</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-slate-600">
+          <span class="w-8 h-8 rounded-full flex items-center justify-center text-base" style="background:#e6faf8;">🗣️</span>
+          <span>Hindi &amp; English</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-slate-600">
+          <span class="w-8 h-8 rounded-full flex items-center justify-center text-base" style="background:#e6faf8;">💳</span>
+          <span>UPI / Cash / Card</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Illustration -->
+    <div class="fade-up hero-illustration" style="transition-delay:0.15s;">
+      <div class="hero-grid-lines"></div>
+      <span class="tooth-icon">🦷</span>
+      <div class="hero-clinic-visual">
+        <div class="text-white text-center">
+          <div class="text-5xl font-extrabold leading-none mb-1">Care</div>
+          <div class="text-teal-200 text-sm font-medium uppercase tracking-widest">Made Personal</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-2 mt-2">
+          <span class="stat-pill">🦷 Root Canal Expert</span>
+          <span class="stat-pill">✨ Tooth Whitening</span>
+          <span class="stat-pill">🔬 Laser Dentistry</span>
+          <span class="stat-pill">🦿 Implants</span>
+        </div>
+        <div class="text-center mt-3">
+          <div class="text-white font-bold text-xl">Our Care Team</div>
+          <div class="text-teal-300 text-sm">BDS • Your Neighbourhood</div>
+        </div>
+      </div>
+      <!-- Rating Badge -->
+      <div class="rating-badge">
+        <span class="text-xl">⭐</span>
+        <div>
+          <div class="font-bold text-slate-800 text-sm leading-tight">4.7 / 5</div>
+          <div class="text-slate-500 text-xs">Patient-focused care</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     WHY CHOOSE US
+═════════════════════════════════════════════════════════ -->
+<section id="why" class="py-16 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <span class="section-eyebrow">Why Patients Choose Us</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">The BrightSmile Difference</h2>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="choose-card fade-up" style="transition-delay:0.0s;">
+        <div class="choose-icon" style="background:#e6faf8;">🏆</div>
+        <h3 class="text-lg font-bold text-slate-800 mb-2">Patient-First Care</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">A welcoming clinic experience built around clear guidance, comfort, and thoughtful treatment planning.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="choose-card fade-up" style="transition-delay:0.1s;">
+        <div class="choose-icon" style="background:#fef3c7;">👨‍👩‍👧‍👦</div>
+        <h3 class="text-lg font-bold text-slate-800 mb-2">Family &amp; Budget Friendly</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Clear treatment discussions and caring support for children, adults, and senior citizens — all under one roof.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="choose-card fade-up" style="transition-delay:0.2s;">
+        <div class="choose-icon" style="background:#f0fdf4;">🧼</div>
+        <h3 class="text-lg font-bold text-slate-800 mb-2">Strict Sterilization</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Clinic-grade sterilised instruments on every visit. Cross-contamination is zero-tolerance here — your safety is a non-negotiable standard, not a selling point.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     SERVICES
+═════════════════════════════════════════════════════════ -->
+<section id="services" class="py-16 px-4" style="background:#f8fffe;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <span class="section-eyebrow">What We Offer</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Our Dental Services</h2>
+      <p class="text-slate-500 mt-3 max-w-xl mx-auto text-base">Click any service to learn more about what's included and what to expect.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="service-grid">
+
+      <!-- Root Canal -->
+      <div class="service-card fade-up" data-service="rct" style="transition-delay:0.0s;">
+        <span class="service-emoji">🦷</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Root Canal Treatment (RCT)</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Painless, single-sitting RCT using modern rotary instruments. Save your natural tooth — no extraction required.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">Pain-Free Procedure</div>
+      </div>
+
+      <!-- Whitening -->
+      <div class="service-card fade-up" data-service="whitening" style="transition-delay:0.05s;">
+        <span class="service-emoji">✨</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Tooth Whitening</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Professional-grade bleaching that delivers visibly brighter smiles in one session. Safe, fast, and lasting results.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">Visible in 1 Session</div>
+      </div>
+
+      <!-- Laser -->
+      <div class="service-card fade-up" data-service="laser" style="transition-delay:0.1s;">
+        <span class="service-emoji">🔬</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Laser Dentistry</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Advanced laser technology for gum treatments, cavity detection, and soft-tissue procedures — minimal bleeding, faster healing.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">Minimal Discomfort</div>
+      </div>
+
+      <!-- Prosthodontics -->
+      <div class="service-card fade-up" data-service="prostho" style="transition-delay:0.15s;">
+        <span class="service-emoji">👑</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Fixed Prosthodontics</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Crowns, bridges, and fixed partial dentures crafted for strength and natural aesthetics. Restore full chewing function permanently.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">Permanent Solution</div>
+      </div>
+
+      <!-- Implants -->
+      <div class="service-card fade-up" data-service="implants" style="transition-delay:0.2s;">
+        <span class="service-emoji">🦿</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Artificial Teeth Implant</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Painless implants for senior citizens and adults — fuse with your jawbone naturally for a lifetime of confident chewing and smiling.</p>
+        <div class="mt-3 inline-block text-xs font-semibold rounded-full px-3 py-1" style="color:#d97706; background:#fef3c7;">Ideal for Seniors</div>
+      </div>
+
+      <!-- Braces -->
+      <div class="service-card fade-up" data-service="braces" style="transition-delay:0.25s;">
+        <span class="service-emoji">😁</span>
+        <h3 class="font-bold text-slate-800 text-base mb-1">Dental Braces Fixing</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Metal, ceramic, and aligner options for teens and adults. Correct overcrowding, gaps, and bite issues with proven orthodontic care.</p>
+        <div class="mt-3 inline-block text-xs font-semibold text-teal-700 bg-teal-50 rounded-full px-3 py-1">All Ages Welcome</div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 fade-up">
+      <a href="#contact" class="btn-primary">
+        💬 Ask About Our Services
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     ABOUT THE DOCTOR
+═════════════════════════════════════════════════════════ -->
+<section id="about" class="py-16 px-4 bg-white">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Visual Side -->
+    <div class="fade-up doctor-photo-placeholder order-1 md:order-none">
+      <div class="text-center text-white z-10 relative px-6 py-10">
+        <div class="text-7xl mb-5">👨‍⚕️</div>
+        <div class="text-2xl font-extrabold mb-1">Our Care Team</div>
+        <div class="text-teal-100 font-medium text-sm mb-6">Your local dental care team</div>
+        <div class="flex flex-wrap justify-center gap-2">
+          <span class="stat-pill">🎓 BDS Graduate</span>
+          <span class="stat-pill">💬 Clear guidance</span>
+          <span class="stat-pill">🧑‍🤝‍🧑 Patient-first approach</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Side -->
+    <div class="fade-up" style="transition-delay:0.15s;">
+      <span class="section-eyebrow">Meet the Team</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1 mb-5">
+        The Person Behind<br />Your Healthy Smile
+      </h2>
+      <p class="text-slate-600 leading-relaxed mb-4">
+        BrightSmile Dental Care is a modern template for practices that want to communicate empathy, precision, and patient confidence. Personalize this section with your team’s qualifications, values, and care approach.
+      </p>
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Use this area to explain how your practice helps patients understand their diagnosis, treatment plan, and options before treatment begins.
+      </p>
+      <div class="flex flex-wrap mb-7">
+        <span class="credential-chip">🎓 Qualified Team</span>
+        <span class="credential-chip">🗓️ Flexible care</span>
+        <span class="credential-chip">🔬 Modern Care</span>
+        <span class="credential-chip">💬 Clear guidance</span>
+        <span class="credential-chip">👶 Family Friendly</span>
+        <span class="credential-chip">🧓 Senior Care</span>
+      </div>
+      <a href="#contact" class="btn-primary">
+        💬 Consult BrightSmile on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TESTIMONIALS
+═════════════════════════════════════════════════════════ -->
+<section id="testimonials" class="py-16 px-4" style="background:#f8fffe;">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <span class="section-eyebrow">Patient Reviews</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Real Words, Real Smiles</h2>
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <span class="star-row text-lg">★★★★★</span>
+        <span class="text-slate-500 text-sm font-medium">Trusted dental support</span>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-6">
+
+      <!-- Review 1 -->
+      <div class="testimonial-card fade-up" style="transition-delay:0.0s;">
+        <div class="pt-6">
+          <p class="text-slate-700 leading-relaxed text-sm mb-5">"Add a short verified patient review here after receiving permission."</p>
+          <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0" style="background:#0d9488;">SP</div>
+            <div>
+              <div class="font-semibold text-slate-800 text-sm">Sample Patient</div>
+              <div class="star-row text-xs">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="testimonial-card fade-up" style="transition-delay:0.1s;">
+        <div class="pt-6">
+          <p class="text-slate-700 leading-relaxed text-sm mb-5">"Use this space for a genuine patient experience that reflects your clinic."</p>
+          <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0" style="background:#0f766e;">SP</div>
+            <div>
+              <div class="font-semibold text-slate-800 text-sm">Sample Patient</div>
+              <div class="star-row text-xs">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="testimonial-card fade-up" style="transition-delay:0.2s;">
+        <div class="pt-6">
+          <p class="text-slate-700 leading-relaxed text-sm mb-5">"Add a verified review that highlights the care experience at your clinic."</p>
+          <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0" style="background:#115e59;">SP</div>
+            <div>
+              <div class="font-semibold text-slate-800 text-sm">Sample Patient</div>
+              <div class="star-row text-xs">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 fade-up">
+      <a href="#contact" class="btn-outline text-sm">
+        🌐 Explore Our Care Philosophy
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     CONTACT STRIP
+═════════════════════════════════════════════════════════ -->
+<section id="contact" class="py-14 px-4" style="background:linear-gradient(135deg,#0d9488 0%,#0f766e 100%);">
+  <div class="max-w-5xl mx-auto text-center fade-up">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Ready for a Healthier Smile?</h2>
+    <p class="text-teal-100 text-lg mb-8 max-w-xl mx-auto">Add your preferred appointment process, response time, and contact options here.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="#contact"
+         class="inline-flex items-center gap-2 bg-white text-teal-700 font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-teal-50 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-500">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Request an Appointment
+      </a>
+      <a href="#contact"
+         class="inline-flex items-center gap-2 bg-white text-teal-700 font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-teal-50 transition-colors">
+        ☎️ Phone placeholder
+      </a>
+      <a href="#contact"
+         class="inline-flex items-center gap-2 bg-white text-teal-700 font-bold px-6 py-3 rounded-full text-sm shadow-lg hover:bg-teal-50 transition-colors">
+        ✉️ Email placeholder
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     FOOTER
+═════════════════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="max-w-7xl mx-auto px-4 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- Brand Column -->
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:#0d9488;">🦷</div>
+        <div>
+          <div class="font-bold text-white text-sm">BrightSmile Dental Care</div>
+          <div class="text-teal-400 text-xs">Your Neighbourhood</div>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed mb-5">A flexible, professional dental website template for your practice.</p>
+      <div class="space-y-2 text-sm">
+        <div>📍 <a href="#contact">Add your clinic address here</a></div>
+        <div>📞 <a href="#contact">Add phone number</a></div>
+        <div>✉️ <a href="#contact">Add email address</a></div>
+      </div>
+    </div>
+
+    <!-- Appointment Information -->
+    <div>
+      <div class="footer-heading">Appointment Information</div>
+      <div id="footer-hours">
+        <div class="hours-row"><span>Availability</span><span>Set your hours</span></div>
+        <div class="hours-row"><span>Appointments</span><span>By request</span></div>
+        <div class="hours-row"><span>Emergency care</span><span>Add your policy</span></div>
+      </div>
+    </div>
+
+    <!-- Payment & Services -->
+    <div>
+      <div class="footer-heading">Payment Options</div>
+      <div class="flex flex-wrap gap-2 mb-8">
+        <span class="pay-badge">📲 UPI</span>
+        <span class="pay-badge">💵 Cash</span>
+        <span class="pay-badge">💳 Card</span>
+      </div>
+      <div class="footer-heading">Quick Services</div>
+      <ul class="space-y-1 text-sm">
+        <li>🦷 Root Canal Treatment</li>
+        <li>✨ Tooth Whitening</li>
+        <li>🔬 Laser Dentistry</li>
+        <li>👑 Fixed Prosthodontics</li>
+        <li>🦿 Artificial Teeth Implant</li>
+        <li>😁 Dental Braces</li>
+      </ul>
+    </div>
+
+    <!-- Map Placeholder -->
+    <div>
+      <div class="footer-heading">Contact Details</div>
+      <div class="map-placeholder">
+        <span class="text-3xl">🗺️</span>
+        <div class="text-center px-4">
+          <div class="font-semibold mb-1">Clinic Address</div>
+          <div class="text-xs text-teal-300 mb-3">Add location details here</div>
+          <a href="#contact"
+             class="inline-flex items-center gap-1 text-xs font-semibold bg-teal-700 text-white px-3 py-1.5 rounded-full hover:bg-teal-600 transition-colors">
+            📍 Contact the Clinic
+          </a>
+        </div>
+      </div>
+      <div class="mt-4">
+        <a href="#contact"
+           target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-2 text-sm font-semibold text-white py-2.5 rounded-xl transition-colors"
+           style="background:#25d366;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Request Appointment
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white border-opacity-5 py-5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+      <span>© 2025 BrightSmile Dental Care, Your Neighbourhood. All rights reserved.</span>
+      <span>Designed with care for every smile.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- External JavaScript -->
+<script src="main.js"></script>
+</body>
+</html>
